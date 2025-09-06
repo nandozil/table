@@ -1,0 +1,125 @@
+<style>
+    .table-style-final {
+        /* 웹폰트나 기본 폰트를 보기 좋게 설정 */
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif;
+        margin: 2.5em 0;
+        border-collapse: collapse;
+        width: 100%;
+        border-radius: 12px; /* 부드러운 모서리 */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07); /* 은은한 그림자 효과 */
+        overflow: hidden; /* 모서리 radius를 적용하기 위함 */
+        border: 1px solid #eef2f7;
+    }
+    .table-style-final .table-title {
+        padding: 20px 25px;
+        font-size: 1.4em;
+        font-weight: 600;
+        color: #2c3e50;
+        text-align: center; /* 제목을 가운데로 정렬하는 핵심 속성 */
+        background-color: #ffffff;
+    }
+    .table-style-final th,
+    .table-style-final td {
+        padding: 18px 25px;
+        text-align: left;
+        line-height: 1.6;
+    }
+    .table-style-final thead tr {
+        background-color: #4a90e2; /* 헤더 배경색 */
+        color: #ffffff; /* 헤더 글자색 */
+        font-size: 1.05em;
+        font-weight: 500;
+    }
+    .table-style-final tbody tr {
+        border-bottom: 1px solid #eef2f7;
+        background-color: #ffffff;
+        transition: background-color 0.2s ease-in-out; /* 부드러운 호버 효과 */
+    }
+    .table-style-final tbody tr:last-of-type {
+        border-bottom: none; /* 마지막 줄의 하단 선 제거 */
+    }
+    .table-style-final tbody tr:hover {
+        background-color: #f7faff; /* 마우스를 올렸을 때 배경색 변경 */
+    }
+
+    /* 모바일 화면을 위한 반응형 스타일 */
+    @media screen and (max-width: 768px) {
+        .table-style-final {
+            box-shadow: none;
+            border: none;
+        }
+        .table-style-final .table-title {
+            font-size: 1.2em;
+            padding: 18px;
+            border-bottom: 1px solid #eef2f7;
+        }
+        .table-style-final thead {
+            display: none; /* PC화면의 헤더 숨기기 */
+        }
+        .table-style-final tr {
+            display: block;
+            margin-bottom: 1.5em;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+            border: 1px solid #eef2f7;
+        }
+        .table-style-final td {
+            display: block;
+            padding: 15px 20px;
+            text-align: right;
+            position: relative;
+            border-bottom: 1px solid #eef2f7;
+        }
+        .table-style-final td:last-child {
+            border-bottom: none;
+        }
+        .table-style-final td::before {
+            /* 모바일 화면에서 왼쪽에 표시될 제목(헤더) */
+            content: attr(data-label);
+            position: absolute;
+            left: 20px;
+            font-weight: 600;
+            color: #34495e;
+            text-align: left;
+        }
+    }
+</style>
+<div class="table-style-final">
+    <div class="table-title">FGI인터뷰 참여 교통소외지역 현황</div>
+    <table>
+        <thead>
+            <tr>
+                <th>지역</th>
+                <th>주요 언급 버스 노선</th>
+                <th>핵심 문제점</th>
+                <th>주요 주민 제안</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="지역">고봉4통(노년층)</td>
+                <td data-label="주요 언급 버스 노선">087, 037</td>
+                <td data-label="핵심 문제점">'유령버스'(하루 4회), 비효율적 노선, 필수 노선(037번) 무정차 통과</td>
+                <td data-label="주요 주민 제안">087번 노선을 병원/주민센터 경유로 변경, 037번을 마을회관에서 회차</td>
+            </tr>
+            <tr>
+                <td data-label="지역">대장,내곡,산황동(학부모)</td>
+                <td data-label="주요 언급 버스 노선">72</td>
+                <td data-label="핵심 문제점">마을버스 단 1대 운행, 잦은 고장, 1시간 배차간격, GTX 개통 후 노선 축소</td>
+                <td data-label="주요 주민 제안">버스 공영제(공공버스) 도입, 배차 간격 정상화</td>
+            </tr>
+            <tr>
+                <td data-label="지역">가좌동(고등학생)</td>
+                <td data-label="주요 언급 버스 노선">57</td>
+                <td data-label="핵심 문제점">극심한 혼잡('지옥버스'), 대체 노선 부재, 우회 노선으로 인한 시간 낭비</td>
+                <td data-label="주요 주민 제안">가좌동 버스 노선 다양화, 운행 횟수 증차</td>
+            </tr>
+            <tr>
+                <td data-label="지역">고봉동(고양자유학교학생)</td>
+                <td data-label="주요 언급 버스 노선">036, 037, 55, 60</td>
+                <td data-label="핵심 문제점">불규칙한 운행 시간, 긴 배차 간격(최대 3시간), 위험한 보행 환경</td>
+                <td data-label="주요 주민 제안">버스 노선 확대, 수요응답형버스(DRT) 증차, 도로 및 보행 환경 안전 개선</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

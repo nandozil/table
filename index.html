@@ -1,125 +1,152 @@
-<style>
-    .table-style-final {
-        /* 웹폰트나 기본 폰트를 보기 좋게 설정 */
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif;
-        margin: 2.5em 0;
-        border-collapse: collapse;
-        width: 100%;
-        border-radius: 12px; /* 부드러운 모서리 */
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07); /* 은은한 그림자 효과 */
-        overflow: hidden; /* 모서리 radius를 적용하기 위함 */
-        border: 1px solid #eef2f7;
-    }
-    .table-style-final .table-title {
-        padding: 20px 25px;
-        font-size: 1.4em;
-        font-weight: 600;
-        color: #2c3e50;
-        text-align: center; /* 제목을 가운데로 정렬하는 핵심 속성 */
-        background-color: #ffffff;
-    }
-    .table-style-final th,
-    .table-style-final td {
-        padding: 18px 25px;
-        text-align: left;
-        line-height: 1.6;
-    }
-    .table-style-final thead tr {
-        background-color: #4a90e2; /* 헤더 배경색 */
-        color: #ffffff; /* 헤더 글자색 */
-        font-size: 1.05em;
-        font-weight: 500;
-    }
-    .table-style-final tbody tr {
-        border-bottom: 1px solid #eef2f7;
-        background-color: #ffffff;
-        transition: background-color 0.2s ease-in-out; /* 부드러운 호버 효과 */
-    }
-    .table-style-final tbody tr:last-of-type {
-        border-bottom: none; /* 마지막 줄의 하단 선 제거 */
-    }
-    .table-style-final tbody tr:hover {
-        background-color: #f7faff; /* 마우스를 올렸을 때 배경색 변경 */
-    }
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FGI인터뷰 참여 교통소외지역 현황</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
 
-    /* 모바일 화면을 위한 반응형 스타일 */
-    @media screen and (max-width: 768px) {
-        .table-style-final {
-            box-shadow: none;
-            border: none;
-        }
-        .table-style-final .table-title {
-            font-size: 1.2em;
-            padding: 18px;
-            border-bottom: 1px solid #eef2f7;
-        }
-        .table-style-final thead {
-            display: none; /* PC화면의 헤더 숨기기 */
-        }
-        .table-style-final tr {
-            display: block;
-            margin-bottom: 1.5em;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-            border: 1px solid #eef2f7;
-        }
-        .table-style-final td {
-            display: block;
-            padding: 15px 20px;
-            text-align: right;
-            position: relative;
-            border-bottom: 1px solid #eef2f7;
-        }
-        .table-style-final td:last-child {
-            border-bottom: none;
-        }
-        .table-style-final td::before {
-            /* 모바일 화면에서 왼쪽에 표시될 제목(헤더) */
-            content: attr(data-label);
-            position: absolute;
-            left: 20px;
-            font-weight: 600;
-            color: #34495e;
-            text-align: left;
-        }
-    }
-</style>
-<div class="table-style-final">
-    <div class="table-title">FGI인터뷰 참여 교통소외지역 현황</div>
-    <table>
-        <thead>
-            <tr>
-                <th>지역</th>
-                <th>주요 언급 버스 노선</th>
-                <th>핵심 문제점</th>
-                <th>주요 주민 제안</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td data-label="지역">고봉4통(노년층)</td>
-                <td data-label="주요 언급 버스 노선">087, 037</td>
-                <td data-label="핵심 문제점">'유령버스'(하루 4회), 비효율적 노선, 필수 노선(037번) 무정차 통과</td>
-                <td data-label="주요 주민 제안">087번 노선을 병원/주민센터 경유로 변경, 037번을 마을회관에서 회차</td>
-            </tr>
-            <tr>
-                <td data-label="지역">대장,내곡,산황동(학부모)</td>
-                <td data-label="주요 언급 버스 노선">72</td>
-                <td data-label="핵심 문제점">마을버스 단 1대 운행, 잦은 고장, 1시간 배차간격, GTX 개통 후 노선 축소</td>
-                <td data-label="주요 주민 제안">버스 공영제(공공버스) 도입, 배차 간격 정상화</td>
-            </tr>
-            <tr>
-                <td data-label="지역">가좌동(고등학생)</td>
-                <td data-label="주요 언급 버스 노선">57</td>
-                <td data-label="핵심 문제점">극심한 혼잡('지옥버스'), 대체 노선 부재, 우회 노선으로 인한 시간 낭비</td>
-                <td data-label="주요 주민 제안">가좌동 버스 노선 다양화, 운행 횟수 증차</td>
-            </tr>
-            <tr>
-                <td data-label="지역">고봉동(고양자유학교학생)</td>
-                <td data-label="주요 언급 버스 노선">036, 037, 55, 60</td>
-                <td data-label="핵심 문제점">불규칙한 운행 시간, 긴 배차 간격(최대 3시간), 위험한 보행 환경</td>
-                <td data-label="주요 주민 제안">버스 노선 확대, 수요응답형버스(DRT) 증차, 도로 및 보행 환경 안전 개선</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <header class="text-center mb-8 lg:mb-12">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-white">교통소외지역 현황</h1>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">FGI 인터뷰 참여 지역별 문제점 및 개선 제안</p>
+        </header>
+
+        <main class="space-y-6">
+
+            <!-- Card 1: 고봉동 (노년층) -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
+                <div class="p-5 border-b border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-indigo-600 dark:text-indigo-400">고봉동 (노년층)</h2>
+                </div>
+                <div class="p-5 space-y-5">
+                    <div>
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2">주요 언급 버스 노선</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-lg font-bold rounded-full">087</span>
+                            <span class="flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-lg font-bold rounded-full">037</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-5">
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            핵심 문제점
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">운영(하루 4회), 비효율적 노선, 필수 노선(037번) 무정차 통과</p>
+                    </div>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-5">
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                             <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            주요 주민 제안
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">087번 노선을 병원·주민센터 경유로 변경, 037번을 마을회관에서 회차</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: 대장·내곡·신평동 (학부모) -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
+                <div class="p-5 border-b border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-indigo-600 dark:text-indigo-400">대장·내곡·신평동 (학부모)</h2>
+                </div>
+                <div class="p-5 space-y-5">
+                    <div>
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2">주요 언급 버스 노선</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-lg font-bold rounded-full">072</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-5">
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            핵심 문제점
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">마을버스 단 1대 운행, 잦은 고장, 1시간 배차간격, GTX 개통 후 노선 축소</p>
+                    </div>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-5">
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            주요 주민 제안
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">버스 공영제(공공버스) 도입, 배차 간격 정상화</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: 가좌동 (고등학생) -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
+                <div class="p-5 border-b border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-indigo-600 dark:text-indigo-400">가좌동 (고등학생)</h2>
+                </div>
+                <div class="p-5 space-y-5">
+                    <div>
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2">주요 언급 버스 노선</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-lg font-bold rounded-full">057</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-5">
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            핵심 문제점
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">극심한 혼잡(지옥버스), 대체 노선 부재, 우회 노선으로 인한 시간 낭비</p>
+                    </div>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-5">
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            주요 주민 제안
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">가좌동 버스노선 다양화(대화역행 노선 확대), 운행 횟수 증차</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: 고봉동 (고양자유학교 학생) -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
+                <div class="p-5 border-b border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-indigo-600 dark:text-indigo-400">고봉동 (고양자유학교 학생)</h2>
+                </div>
+                <div class="p-5 space-y-5">
+                    <div>
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2">주요 언급 버스 노선</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-lg font-bold rounded-full">036</span>
+                            <span class="flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-lg font-bold rounded-full">037</span>
+                            <span class="flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-lg font-bold rounded-full">55</span>
+                            <span class="flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-lg font-bold rounded-full">60</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-5">
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            핵심 문제점
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">불규칙한 운행 시간, 긴 배차간격(최대 3시간), 위험한 보행 환경</p>
+                    </div>
+                    <div class="border-t border-gray-200 dark:border-gray-700 pt-5">
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            주요 주민 제안
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">버스노선 확대, 수요응답형 버스(DRT) 증차, 도로 및 보행 환경 안전 개선</p>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+</body>
+</html>
